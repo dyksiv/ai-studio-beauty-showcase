@@ -208,7 +208,11 @@ function Pricing() {
       <div className="mt-10 grid gap-5 lg:grid-cols-3">
         {packages.map((item) => (
           <article
-            className={`glass rounded-[32px] p-7 transition duration-500 hover:-translate-y-2 ${item.featured ? "bg-[#3a2a25] text-white" : ""}`}
+            className={`rounded-[32px] p-7 transition duration-500 hover:-translate-y-2 ${
+              item.featured
+                ? "border border-[#6a5148]/20 bg-[#3a2a25] text-white shadow-2xl shadow-[#3a2a25]/22"
+                : "glass"
+            }`}
             key={item.name}
           >
             <p className={item.featured ? "text-[#f0b7bf]" : "text-[#b06d78]"}>{item.name}</p>
