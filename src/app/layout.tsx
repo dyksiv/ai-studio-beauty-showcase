@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Premium Beauty Landing Demo | AI Studio",
+  title: "AI Studio | Красивые сайты для мастеров красоты за 7 дней",
   description:
-    "Три премиальных demo-лендинга AI Studio для beauty-мастеров: ресницы, маникюр и косметология.",
+    "Витрина AI Studio с четырьмя премиальными demo-сайтами для beauty-мастеров: салон красоты, ресницы, маникюр и косметология.",
 };
 
 export default function RootLayout({
