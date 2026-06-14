@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf6f0;
+  --foreground: #352721;
+  --rose: #d79aa1;
+  --clay: #b98372;
+  --cream: #fffaf4;
+  --sage: #9fae9c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 229, 223, 0.78), transparent 30rem),
+    radial-gradient(circle at 90% 5%, rgba(232, 211, 191, 0.72), transparent 28rem),
+    linear-gradient(180deg, #fffaf4 0%, var(--background) 42%, #fff8f5 100%);
+  color: var(--foreground);
+  font-family:
+    "Inter",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: -20%;
+  z-index: -2;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(circle at 28% 18%, rgba(240, 183, 191, 0.22), transparent 25rem),
+    radial-gradient(circle at 76% 12%, rgba(185, 131, 114, 0.16), transparent 30rem),
+    radial-gradient(circle at 55% 86%, rgba(159, 174, 156, 0.12), transparent 34rem);
+  animation: background-drift 18s ease-in-out infinite alternate;
+}
+
+::selection {
+  background: rgba(215, 154, 161, 0.35);
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background: rgba(255, 250, 246, 0.66);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    0 24px 70px rgba(126, 87, 72, 0.13);
+  backdrop-filter: blur(24px);
+}
+
+.soft-border {
+  border: 1px solid rgba(185, 131, 114, 0.16);
+}
+
+.section-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.premium-button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.premium-button::after {
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  content: "";
+  background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.52), transparent 80%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+
+.premium-button:hover::after {
+  transform: translateX(120%);
+}
+
+.service-card::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), transparent 36%, rgba(240, 183, 191, 0.18));
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.glow-orbit {
+  animation: glow-pulse 4.8s ease-in-out infinite alternate;
+}
+
+.parallax-card {
+  animation: hero-float 8s ease-in-out infinite alternate;
+}
+
+.reveal {
+  animation: reveal-up both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+@supports not (animation-timeline: view()) {
+  .reveal {
+    animation: none;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(34px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes background-drift {
+  from {
+    transform: translate3d(-1.5%, -1%, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(1.5%, 1%, 0) scale(1.04);
+  }
+}
+
+@keyframes glow-pulse {
+  from {
+    opacity: 0.58;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 0.95;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes hero-float {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    width: min(1180px, calc(100% - 64px));
+  }
+}
