@@ -210,10 +210,20 @@ function Pricing() {
           <article
             className={`rounded-[32px] p-7 transition duration-500 hover:-translate-y-2 ${
               item.featured
-                ? "border border-[#6a5148]/20 bg-[#3a2a25] text-white shadow-2xl shadow-[#3a2a25]/22"
+                ? "border shadow-2xl"
                 : "glass"
             }`}
             key={item.name}
+            style={
+              item.featured
+                ? {
+                    background: "#3a2a25",
+                    borderColor: "rgba(106, 81, 72, 0.2)",
+                    boxShadow: "0 28px 80px rgba(58, 42, 37, 0.22)",
+                    color: "#ffffff",
+                  }
+                : undefined
+            }
           >
             <p className={item.featured ? "text-[#f0b7bf]" : "text-[#b06d78]"}>{item.name}</p>
             <p className="mt-4 text-4xl font-semibold">{item.price}</p>
