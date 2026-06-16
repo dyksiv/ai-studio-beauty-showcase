@@ -234,10 +234,10 @@ function Booking({ site }: { site: BeautySite }) {
             Запишитесь на удобное время
           </h2>
           <p className="mt-5 leading-8 text-[#6c544b]">
-            Код формы уже подготовлен для подключения Telegram-уведомлений через Route Handler.
+            Заявка отправляется через сайт и может сразу приходить в Telegram администратора.
           </p>
         </div>
-        <BookingForm services={site.services.map((service) => service.title)} />
+        <BookingForm siteName={site.brand} services={site.services.map((service) => service.title)} />
       </div>
     </section>
   );

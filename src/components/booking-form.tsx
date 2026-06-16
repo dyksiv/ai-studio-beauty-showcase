@@ -3,27 +3,52 @@
 import { FormEvent, useState } from "react";
 
 type BookingFormProps = {
+  siteName: string;
   services: string[];
   successMessage?: string;
 };
 
 export function BookingForm({
+  siteName,
   services,
   successMessage = "Спасибо за заявку. Мы свяжемся с вами в ближайшее время.",
 }: BookingFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    const payload = Object.fromEntries(formData.entries());
+    setErrorMessage("");
+    setIsSubmitting(true);
 
-    // Later: send payload to a Next.js Route Handler that forwards the lead to Telegram or WhatsApp.
-    // Example endpoint: await fetch("/api/booking", { method: "POST", body: JSON.stringify(payload) });
-    console.info("Booking request prepared:", payload);
+    const formData = new FormData(event.currentTarget);
+    const payload = {
+      siteName,
+      name: String(formData.get("name") ?? ""),
+      phone: String(formData.get("phone") ?? ""),
+      service: String(formData.get("service") ?? ""),
+      date: String(formData.get("date") ?? ""),
+      comment: String(formData.get("comment") ?? ""),
+    };
+
+    const response = await fetch("/api/booking", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      setErrorMessage("Не удалось отправить заявку. Попробуйте еще раз.");
+      setIsSubmitting(false);
+      return;
+    }
 
     setSubmitted(true);
+    setIsSubmitting(false);
     event.currentTarget.reset();
   }
 
@@ -63,13 +88,19 @@ export function BookingForm({
       </div>
       <button
         className="premium-button mt-5 w-full rounded-full bg-[#3a2a25] px-8 py-4 font-semibold text-white shadow-xl shadow-[#3a2a25]/15 transition hover:-translate-y-1 hover:bg-[#4a342d]"
+        disabled={isSubmitting}
         type="submit"
       >
-        Отправить заявку
+        {isSubmitting ? "Отправляем..." : "Отправить заявку"}
       </button>
       {submitted ? (
         <p className="mt-4 rounded-2xl bg-[#eef4ea] px-4 py-3 text-center font-medium text-[#586f54]">
           {successMessage}
+        </p>
+      ) : null}
+      {errorMessage ? (
+        <p className="mt-4 rounded-2xl bg-[#fff1f0] px-4 py-3 text-center font-medium text-[#9f625f]">
+          {errorMessage}
         </p>
       ) : null}
     </form>
