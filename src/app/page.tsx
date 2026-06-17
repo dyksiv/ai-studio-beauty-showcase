@@ -286,7 +286,7 @@ function Faq() {
 function Contacts() {
   return (
     <section className="section-shell reveal py-20" id="contacts">
-      <div className="glass-soft grid gap-8 rounded-[36px] bg-gradient-to-br from-[#f4c9cf]/72 via-[#fff7ef]/88 to-[#e2c6b5]/74 p-8 shadow-2xl shadow-[#b98372]/18 md:p-12 lg:grid-cols-[1fr_0.9fr]">
+      <div className="glass-soft grid gap-8 rounded-[36px] bg-[linear-gradient(135deg,rgba(248,226,229,0.55),rgba(255,249,243,0.94)_42%,rgba(247,236,228,0.92))] p-8 shadow-2xl shadow-[#b98372]/18 md:p-12 lg:grid-cols-[1fr_0.9fr]">
         <div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-[#9f625f]">Контакты</p>
           <h2 className="max-w-2xl text-4xl font-semibold leading-tight text-[#34251f] md:text-5xl">
