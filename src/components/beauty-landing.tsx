@@ -3,6 +3,9 @@ import Link from "next/link";
 import { BookingForm } from "@/components/booking-form";
 import { beautySites, type BeautySite } from "@/lib/beauty-sites";
 
+const TELEGRAM_URL = "https://t.me/dyksiv";
+const WHATSAPP_URL = "https://wa.me/78123368701";
+
 export function BeautyLanding({ site }: { site: BeautySite }) {
   return (
     <main className="relative overflow-hidden">
@@ -279,8 +282,8 @@ function Footer({ site }: { site: BeautySite }) {
           </div>
           <div className="grid gap-4 text-[#6c544b] sm:grid-cols-2 md:grid-cols-3">
             <a href="#booking">Контакты</a>
-            <a href="https://t.me/">Telegram</a>
-            <a href="https://wa.me/">WhatsApp</a>
+            <a href={TELEGRAM_URL} rel="noreferrer" target="_blank">Telegram</a>
+            <a href={WHATSAPP_URL} rel="noreferrer" target="_blank">WhatsApp</a>
             <a href="#">Instagram</a>
             <span>{site.address}</span>
           </div>

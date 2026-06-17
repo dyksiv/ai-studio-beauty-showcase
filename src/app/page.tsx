@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { beautySites } from "@/lib/beauty-sites";
 
+const TELEGRAM_URL = "https://t.me/dyksiv";
+const WHATSAPP_URL = "https://wa.me/78123368701";
+
 const advantages = [
   "Дизайн в стиле premium beauty aesthetic",
   "Готовые секции: услуги, цены, отзывы, FAQ и запись",
@@ -294,10 +297,20 @@ function Contacts() {
           </p>
         </div>
         <div className="grid content-center gap-3">
-          <a className="premium-button rounded-full bg-[#3a2a25] px-8 py-4 text-center font-semibold text-white shadow-xl shadow-[#3a2a25]/15 transition hover:-translate-y-1" href="https://t.me/">
+          <a
+            className="premium-button rounded-full bg-[#3a2a25] px-8 py-4 text-center font-semibold text-white shadow-xl shadow-[#3a2a25]/15 transition hover:-translate-y-1"
+            href={TELEGRAM_URL}
+            rel="noreferrer"
+            target="_blank"
+          >
             Написать в Telegram
           </a>
-          <a className="rounded-full bg-white/70 px-8 py-4 text-center font-semibold text-[#4a342d] soft-border transition hover:-translate-y-1 hover:bg-white" href="https://wa.me/">
+          <a
+            className="rounded-full bg-white/70 px-8 py-4 text-center font-semibold text-[#4a342d] soft-border transition hover:-translate-y-1 hover:bg-white"
+            href={WHATSAPP_URL}
+            rel="noreferrer"
+            target="_blank"
+          >
             Написать в WhatsApp
           </a>
         </div>
