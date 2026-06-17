@@ -27,7 +27,7 @@ index.html
 
 ```txt
 Телефон: +7 (812) 336-87-01
-Email: dyksi@yandex.ru
+Email: ai-vera-studio@yandex.ru
 WhatsApp: https://wa.me/79816838475
 Telegram: https://t.me/dyksiv
 ```
