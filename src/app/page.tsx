@@ -5,7 +5,7 @@ import { beautySites } from "@/lib/beauty-sites";
 const TELEGRAM_URL = "https://t.me/dyksiv";
 const WHATSAPP_URL = "https://wa.me/79816838475";
 const VK_URL = "https://vk.com/dyksiv";
-const EMAIL = "prodgekt-1100@yandex.ru";
+const EMAIL = "dyksi@yandex.ru";
 
 const advantages = [
   "Дизайн в стиле premium beauty aesthetic",
