@@ -4,6 +4,8 @@ import { beautySites } from "@/lib/beauty-sites";
 
 const TELEGRAM_URL = "https://t.me/dyksiv";
 const WHATSAPP_URL = "https://wa.me/79816838475";
+const VK_URL = "https://vk.com/dyksiv";
+const EMAIL = "prodgekt-1100@yandex.ru";
 
 const advantages = [
   "Дизайн в стиле premium beauty aesthetic",
@@ -18,29 +20,74 @@ const packages = [
   {
     name: "Start",
     price: "15 000 ₽",
-    description: "Одностраничный сайт на базе готовой beauty-структуры.",
-    features: ["1 ниша", "до 6 блоков", "адаптив", "базовая SEO-настройка"],
+    description: "Для мастеров красоты, которым нужен красивый сайт и удобная запись клиентов.",
+    features: [
+      "Сайт для одного специалиста",
+      "До 6 блоков",
+      "Адаптация под телефон",
+      "Галерея работ",
+      "Telegram, WhatsApp и VK",
+      "Форма заявки",
+      "Подготовка сайта для Яндекс и Google",
+      "Публикация сайта в интернете",
+      "2 раунда правок",
+      "7 дней поддержки",
+    ],
+    timing: "5-7 дней",
   },
   {
     name: "Premium",
     price: "25 000 ₽",
-    description: "Продающий лендинг с расширенными блоками и визуальной упаковкой.",
-    features: ["до 10 блоков", "прайс и отзывы", "форма заявки", "подготовка к Vercel"],
+    description: "Для специалистов и небольших студий, которые хотят выглядеть дорого и профессионально.",
+    features: [
+      "Все из тарифа Start",
+      "AI-визуалы для сайта",
+      "Помощь с текстами",
+      "Блок FAQ",
+      "Кейсы и отзывы",
+      "Расширенная структура сайта",
+      "Настройка аналитики",
+      "Дополнительные анимации",
+      "4 раунда правок",
+      "14 дней поддержки",
+    ],
+    timing: "7-10 дней",
     featured: true,
   },
   {
     name: "Atelier",
     price: "от 35 000 ₽",
-    description: "Индивидуальный дизайн под студию, мастера или сеть beauty-услуг.",
-    features: ["кастомная структура", "AI-визуалы", "несколько страниц", "интеграции"],
+    description: "Индивидуальный проект для студии красоты, сети салонов или премиального бренда.",
+    features: [
+      "Индивидуальная структура",
+      "Несколько страниц",
+      "AI-визуалы",
+      "Дополнительные интеграции",
+      "Индивидуальный дизайн",
+      "Проработка воронки записи",
+      "Масштабируемая архитектура сайта",
+      "Приоритетная поддержка",
+    ],
+    timing: "по задаче",
   },
 ];
 
 const steps = [
-  ["01", "Бриф", "Собираем нишу, услуги, цены, стиль, контакты и примеры сайтов."],
-  ["02", "Прототип", "Собираем структуру страницы так, чтобы клиент быстро дошел до записи."],
-  ["03", "Дизайн и код", "Делаем premium-визуал, адаптивную верстку и аккуратные анимации."],
-  ["04", "Запуск", "Проверяем сборку, публикуем на Vercel и отдаем ссылку для рекламы."],
+  ["Шаг 1", "Заявка", "Оставляете заявку на сайте или пишете в Telegram."],
+  ["Шаг 2", "Короткий созвон", "Обсуждаем услуги, примеры и задачи."],
+  ["Шаг 3", "Дизайн", "Создаю структуру и визуальную концепцию сайта."],
+  ["Шаг 4", "Согласование", "Вносим необходимые правки."],
+  ["Шаг 5", "Запуск", "Публикую сайт и передаю все доступы."],
+];
+
+const extraServices = [
+  ["Изменение информации на сайте", "от 500 ₽"],
+  ["Добавление нового блока", "от 1 000 ₽"],
+  ["Новая страница", "от 3 000 ₽"],
+  ["Подключение онлайн-записи", "от 2 000 ₽"],
+  ["Подключение Telegram-уведомлений", "от 3 000 ₽"],
+  ["Ежемесячная поддержка", "от 2 000 ₽/месяц"],
+  ["AI-визуалы для социальных сетей", "от 3 000 ₽"],
 ];
 
 const faqs = [
@@ -60,6 +107,7 @@ export default function Home() {
       <Advantages />
       <Showcase />
       <Pricing />
+      <ExtraServices />
       <Steps />
       <Faq />
       <Contacts />
@@ -78,6 +126,7 @@ function Header() {
           <a className="transition hover:text-[#b06d78]" href="#advantages">Преимущества</a>
           <a className="transition hover:text-[#b06d78]" href="#showcase">Демо</a>
           <a className="transition hover:text-[#b06d78]" href="#pricing">Цены</a>
+          <a className="transition hover:text-[#b06d78]" href="#extra-services">Допуслуги</a>
           <a className="transition hover:text-[#b06d78]" href="#contacts">Контакты</a>
         </div>
         <a
@@ -230,12 +279,35 @@ function Pricing() {
           >
             <p className={item.featured ? "text-[#f0b7bf]" : "text-[#b06d78]"}>{item.name}</p>
             <p className="mt-4 text-4xl font-semibold">{item.price}</p>
-            <p className={`mt-4 min-h-20 leading-7 ${item.featured ? "text-white/76" : "text-[#70584f]"}`}>{item.description}</p>
+            <p className={`mt-4 min-h-24 leading-7 ${item.featured ? "text-white/76" : "text-[#70584f]"}`}>{item.description}</p>
             <div className="mt-7 grid gap-3">
               {item.features.map((feature) => (
                 <p className={item.featured ? "text-white/82" : "text-[#5f493f]"} key={feature}>✓ {feature}</p>
               ))}
             </div>
+            <div className={`mt-8 rounded-[22px] px-5 py-4 ${item.featured ? "bg-white/10 text-white" : "bg-white/58 text-[#3a2a25] soft-border"}`}>
+              <p className={item.featured ? "text-sm text-white/62" : "text-sm text-[#9f625f]"}>Срок</p>
+              <p className="mt-1 text-lg font-semibold">{item.timing}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ExtraServices() {
+  return (
+    <section className="section-shell reveal py-20" id="extra-services">
+      <SectionHeading eyebrow="Дополнительно" title="Дополнительные услуги" />
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {extraServices.map(([name, price]) => (
+          <article
+            className="glass rounded-[28px] p-6 transition duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#b98372]/18"
+            key={name}
+          >
+            <p className="min-h-14 text-lg font-semibold leading-7 text-[#3a2a25]">{name}</p>
+            <p className="mt-5 text-2xl font-semibold text-[#b06d78]">{price}</p>
           </article>
         ))}
       </div>
@@ -245,10 +317,10 @@ function Pricing() {
 
 function Steps() {
   return (
-    <section className="section-shell reveal py-20">
+    <section className="section-shell reveal py-20" id="workflow">
       <div className="rounded-[36px] bg-[#3a2a25] p-8 text-white shadow-2xl shadow-[#3a2a25]/20 md:p-12">
-        <SectionHeading eyebrow="Этапы" title="От идеи до публичной ссылки за неделю" inverse />
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <SectionHeading eyebrow="Этапы" title="Как проходит работа" inverse />
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
           {steps.map(([number, title, text]) => (
             <article className="rounded-[26px] bg-white/9 p-6 ring-1 ring-white/10" key={number}>
               <span className="text-sm text-[#f0b7bf]">{number}</span>
@@ -295,6 +367,9 @@ function Contacts() {
           <p className="mt-5 max-w-2xl leading-8 text-[#6c544b]">
             Напишите в мессенджер, покажите нишу и пару референсов. Я соберу страницу под вашу услугу, цены и стиль.
           </p>
+          <p className="mt-5 rounded-full bg-white/62 px-5 py-3 text-sm font-semibold text-[#9f625f] soft-border">
+            Отвечаю лично в течение рабочего дня.
+          </p>
         </div>
         <div className="grid content-center gap-3">
           <a
@@ -312,6 +387,20 @@ function Contacts() {
             target="_blank"
           >
             Написать в WhatsApp
+          </a>
+          <a
+            className="rounded-full bg-white/70 px-8 py-4 text-center font-semibold text-[#4a342d] soft-border transition hover:-translate-y-1 hover:bg-white"
+            href={VK_URL}
+            rel="noreferrer"
+            target="_blank"
+          >
+            Написать во VK
+          </a>
+          <a
+            className="rounded-full bg-white/70 px-8 py-4 text-center font-semibold text-[#4a342d] soft-border transition hover:-translate-y-1 hover:bg-white"
+            href={`mailto:${EMAIL}`}
+          >
+            {EMAIL}
           </a>
         </div>
       </div>
