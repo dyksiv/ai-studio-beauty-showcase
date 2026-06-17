@@ -358,16 +358,16 @@ function Faq() {
 function Contacts() {
   return (
     <section className="section-shell reveal py-20" id="contacts">
-      <div className="glass-soft grid gap-8 rounded-[36px] bg-[linear-gradient(135deg,rgba(248,226,229,0.55),rgba(255,249,243,0.94)_42%,rgba(247,236,228,0.92))] p-8 shadow-2xl shadow-[#b98372]/18 md:p-12 lg:grid-cols-[1fr_0.9fr]">
+      <div className="glass-soft grid gap-8 rounded-[36px] p-8 md:p-12 lg:grid-cols-[1fr_0.9fr]">
         <div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-[#9f625f]">Контакты</p>
           <h2 className="max-w-2xl text-4xl font-semibold leading-tight text-[#34251f] md:text-5xl">
             Хотите такой сайт для beauty-мастера?
           </h2>
-          <p className="mt-5 max-w-2xl leading-8 text-[#6c544b]">
+          <p className="mt-5 max-w-2xl text-base font-medium leading-8 text-[#5f493f] md:text-lg">
             Напишите в мессенджер, покажите нишу и пару референсов. Я соберу страницу под вашу услугу, цены и стиль.
           </p>
-          <p className="mt-5 rounded-full bg-white/62 px-5 py-3 text-sm font-semibold text-[#9f625f] soft-border">
+          <p className="mt-5 rounded-full bg-[#fff8f2] px-5 py-3 text-sm font-semibold text-[#8f5856] soft-border">
             Отвечаю лично в течение рабочего дня.
           </p>
         </div>
@@ -381,7 +381,7 @@ function Contacts() {
             Написать в Telegram
           </a>
           <a
-            className="rounded-full bg-white/70 px-8 py-4 text-center font-semibold text-[#4a342d] soft-border transition hover:-translate-y-1 hover:bg-white"
+            className="rounded-full bg-[#fffaf4] px-8 py-4 text-center font-semibold text-[#4a342d] soft-border shadow-sm transition hover:-translate-y-1 hover:bg-white"
             href={WHATSAPP_URL}
             rel="noreferrer"
             target="_blank"
@@ -389,7 +389,7 @@ function Contacts() {
             Написать в WhatsApp
           </a>
           <a
-            className="rounded-full bg-white/70 px-8 py-4 text-center font-semibold text-[#4a342d] soft-border transition hover:-translate-y-1 hover:bg-white"
+            className="rounded-full bg-[#fffaf4] px-8 py-4 text-center font-semibold text-[#4a342d] soft-border shadow-sm transition hover:-translate-y-1 hover:bg-white"
             href={VK_URL}
             rel="noreferrer"
             target="_blank"
@@ -397,7 +397,7 @@ function Contacts() {
             Написать во VK
           </a>
           <a
-            className="rounded-full bg-white/70 px-8 py-4 text-center font-semibold text-[#4a342d] soft-border transition hover:-translate-y-1 hover:bg-white"
+            className="rounded-full bg-[#fffaf4] px-8 py-4 text-center font-semibold text-[#4a342d] soft-border shadow-sm transition hover:-translate-y-1 hover:bg-white"
             href={`mailto:${EMAIL}`}
           >
             {EMAIL}
