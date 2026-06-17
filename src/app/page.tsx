@@ -6,6 +6,7 @@ const TELEGRAM_URL = "https://t.me/dyksiv";
 const WHATSAPP_URL = "https://wa.me/79816838475";
 const VK_URL = "https://vk.com/dyksiv";
 const EMAIL = "ai-vera-studio@yandex.ru";
+const EMAIL_URL = `https://mail.yandex.ru/compose?mailto=${EMAIL}`;
 
 const advantages = [
   "Дизайн в стиле premium beauty aesthetic",
@@ -398,7 +399,9 @@ function Contacts() {
           </a>
           <a
             className="rounded-full bg-[#fffaf4] px-8 py-4 text-center font-semibold text-[#4a342d] soft-border shadow-sm transition hover:-translate-y-1 hover:bg-white"
-            href={`mailto:${EMAIL}`}
+            href={EMAIL_URL}
+            rel="noreferrer"
+            target="_blank"
           >
             {EMAIL}
           </a>
