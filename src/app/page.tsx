@@ -357,7 +357,7 @@ function Faq() {
 
 function Contacts() {
   return (
-    <section className="section-shell reveal py-20" id="contacts">
+    <section className="section-shell py-20" id="contacts">
       <div className="glass-soft grid gap-8 rounded-[36px] p-8 md:p-12 lg:grid-cols-[1fr_0.9fr]">
         <div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-[#9f625f]">Контакты</p>
