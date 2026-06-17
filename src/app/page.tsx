@@ -4,7 +4,7 @@ import { beautySites } from "@/lib/beauty-sites";
 
 const TELEGRAM_URL = "https://t.me/dyksiv";
 const WHATSAPP_URL = "https://wa.me/79816838475";
-const VK_URL = "https://vk.com/dyksiv";
+const VK_URL = "https://vk.ru/dyksi";
 const EMAIL = "ai-vera-studio@yandex.ru";
 const EMAIL_URL = `https://mail.yandex.ru/compose?mailto=${EMAIL}`;
 
