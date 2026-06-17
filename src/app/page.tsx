@@ -3,7 +3,7 @@ import Link from "next/link";
 import { beautySites } from "@/lib/beauty-sites";
 
 const TELEGRAM_URL = "https://t.me/dyksiv";
-const WHATSAPP_URL = "https://wa.me/78123368701";
+const WHATSAPP_URL = "https://wa.me/79816838475";
 
 const advantages = [
   "Дизайн в стиле premium beauty aesthetic",

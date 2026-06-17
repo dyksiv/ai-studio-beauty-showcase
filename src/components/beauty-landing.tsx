@@ -4,7 +4,7 @@ import { BookingForm } from "@/components/booking-form";
 import { beautySites, type BeautySite } from "@/lib/beauty-sites";
 
 const TELEGRAM_URL = "https://t.me/dyksiv";
-const WHATSAPP_URL = "https://wa.me/78123368701";
+const WHATSAPP_URL = "https://wa.me/79816838475";
 
 export function BeautyLanding({ site }: { site: BeautySite }) {
   return (
